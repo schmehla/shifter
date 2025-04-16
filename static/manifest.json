@@ -1,0 +1,21 @@
+{
+    "name": "APP NAME",
+    "short_name": "APP",
+    "description": "YOUR DESCRIPTION",
+    "display": "standalone",
+    "start_url": "/calendar",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "blank192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "blank512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
