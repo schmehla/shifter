@@ -12,11 +12,14 @@ body {
     height: 100svh;
 }
 
-/* * {
+button,
+a {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
 }
 
-*:focus {
-    outline: none;
-} */
+button:focus,
+a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}

@@ -11,4 +11,11 @@
     let value = $state(["club"]);
 </script>
 
-<Listing />
+<span>Eins</span>
+<Listing
+    items={["alter", "was", "geht"]}
+    hrefs={["settings/theme", "settings/theme", "settings/theme"]}
+/>
+
+<span>Zwei</span>
+<Listing items={["a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a"]} />

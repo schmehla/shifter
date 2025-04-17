@@ -28,7 +28,6 @@
 	},
 	"dependencies": {
 		"@lucide/svelte": "^0.488.0",
-		"@zag-js/radio": "^0.1.4",
-		"@zag-js/svelte": "^1.10.0"
+		"dexie": "^4.0.11"
 	}
 }
