@@ -3,9 +3,13 @@ import Dexie, { type Table } from "dexie";
 const DB_NAME = "db";
 const DB_VERSION = 1;
 
-interface Template {
+// TODO move somewhere else
+export interface ListItem {
     id?: number;
     title: string;
+}
+
+export interface Template extends ListItem {
     fullDay: boolean;
     start: string;
     end: string;

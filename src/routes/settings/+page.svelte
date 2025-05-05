@@ -13,9 +13,34 @@
 
 <span>Eins</span>
 <Listing
-    items={["alter", "was", "geht"]}
+    items={["hallo", "was", "geht"]}
     hrefs={["settings/theme", "settings/theme", "settings/theme"]}
 />
 
 <span>Zwei</span>
-<Listing items={["a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a"]} />
+<Listing
+    items={[
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+    ]}
+/>

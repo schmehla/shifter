@@ -1,10 +1,10 @@
 <script lang="ts">
-    import { goto } from "$app/navigation";
-    import { page } from "$app/stores";
-    import { onMount } from "svelte";
-
     import { Navigation } from "@skeletonlabs/skeleton-svelte";
     import { AppBar } from "@skeletonlabs/skeleton-svelte";
+
+    import { fab } from "$lib/shared/fab.svelte";
+
+    import { goBack } from "$lib/utils/goBack";
 
     import Calendar from "@lucide/svelte/icons/calendar";
     import Files from "@lucide/svelte/icons/files";
@@ -13,20 +13,36 @@
 
     import "../app.css";
 
-    function goBack() {
-        const path = $page.url.pathname;
-        const segments = path.split("/").filter(Boolean);
-        if (segments.length > 1) {
-            goto(`/${segments[segments.length - 2]}`);
-        }
-    }
-
     let { children } = $props();
-    let value = $state("Settings");
+    let value = $state("Calendar");
 </script>
 
+<!-- <svelte:head>
+    <meta name="theme-color" content={"bg-primary"} />
+</svelte:head> -->
+
 <!-- <div class="card border-surface-100-900 grid grid-rows-[1fr_auto] border-[1px] h-full"> -->
-<div class="border-surface-100-900 h-svh flex flex-col">
+<div class="border-surface-100-900 h-svh flex flex-col relative">
+    <!-- FAB -->
+    {#if fab.href === null}
+        <button
+            type="button"
+            class="absolute btn preset-filled-primary-500 bottom-25 right-5 z-10 rounded-full h-15 w-15 shadow-md"
+            onclick={fab.onClick}
+        >
+            <svelte:component this={fab.icon} />
+            <!-- <fab.icon /> -->
+        </button>
+    {:else}
+        <a
+            type="button"
+            class="absolute btn preset-filled-primary-500 bottom-25 right-5 z-10 rounded-full h-15 w-15 shadow-md"
+            href={fab.href}
+        >
+            <svelte:component this={fab.icon} />
+            <!-- <fab.icon /> -->
+        </a>
+    {/if}
     <AppBar>
         {#snippet lead()}
             <button type="button" class="btn-icon" onclick={goBack}>
@@ -38,18 +54,21 @@
         <span>{value}</span>
     </AppBar>
     <!-- Content -->
-    <div class="flex-1 overflow-y-scroll p-4">
+    <div class="flex-1 overflow-y-scroll p-4 min-h-0 h-0">
         {@render children()}
     </div>
     <!-- Component -->
     <Navigation.Bar {value} onValueChange={(newValue) => (value = newValue)}>
-        <Navigation.Tile id="Calendar" label="Calendar" href="/calendar"
+        <Navigation.Tile id="Calendar" label="Calendar" href="/calendar" active="text-primary-500"
             ><Calendar /></Navigation.Tile
         >
-        <Navigation.Tile id="Templates" label="Templates" href="/templates"
-            ><Files /></Navigation.Tile
+        <Navigation.Tile
+            id="Templates"
+            label="Templates"
+            href="/templates"
+            active="text-primary-500"><Files /></Navigation.Tile
         >
-        <Navigation.Tile id="Settings" label="Settings" href="/settings"
+        <Navigation.Tile id="Settings" label="Settings" href="/settings" active="text-primary-500"
             ><Settings /></Navigation.Tile
         >
     </Navigation.Bar>

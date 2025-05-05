@@ -1,9 +1,9 @@
 <script lang="ts">
-    import { page } from "$app/state";
     import SunMoon from "@lucide/svelte/icons/sun-moon";
+    import { type ListItem } from "$lib/services/db";
 
     interface Props {
-        items: SvelteStore<{ title: string; id: number }[]>;
+        items: SvelteStore<ListItem[]>;
     }
 
     let { items } = $props();
@@ -13,7 +13,8 @@
     <ul class="list">
         {#each $items as item, idx (item.id)}
             <li class="list-item">
-                <a class="w-full px-6 py-3 flex items-center" href={`template/${item.id}`}>
+                <a class="w-full px-6 py-3 flex items-center" href={`templates/${item.id}`}>
+                    <!-- TODO remove href  -->
                     <SunMoon size={18} class="mr-6" />
                     <span>{item.title}</span>
                 </a>
