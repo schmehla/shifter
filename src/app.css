@@ -2,14 +2,19 @@
 
 @import "@skeletonlabs/skeleton";
 @import "@skeletonlabs/skeleton/optional/presets";
-@import "@skeletonlabs/skeleton/themes/catppuccin";
+@import "@skeletonlabs/skeleton/themes/wintry";
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
 
+html {
+    overscroll-behavior-y: contain;
+}
+
 body {
     height: 100dvh;
+    overflow: hidden;
 }
 
 button,

@@ -1,0 +1,49 @@
+{
+    "general": {
+        "save": "Save"
+    },
+    "calendar": "Calendar",
+    "Calendar": {
+        "week": ["S", "M", "T", "W", "T", "F", "S"],
+        "week_start": 0,
+        "months": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ]
+    },
+    "templates": "Templates",
+    "Templates": {},
+    "settings": "Settings",
+    "Settings": {
+        "ical": "iCal",
+        "Ical": {
+            "explanation": "",
+            "username": "Username",
+            "usernamePlaceholder": "Enter your username.",
+            "password": "Password",
+            "passwordPlaceholder": "Enter your password."
+        },
+        "theme": "Theme",
+        "Theme": {
+            "system": "System",
+            "dark": "Dark",
+            "light": "Light"
+        },
+        "lang": "Language",
+        "Lang": {
+            "default": "Default",
+            "en": "English",
+            "de": "German"
+        }
+    }
+}

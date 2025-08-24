@@ -1,10 +1,11 @@
 <script lang="ts">
-    let themeOptions = ["automatic", "light", "dark"];
-    let themeLabels = ["Automatic", "Light", "Dark"];
-    let theme = $state("automatic");
+    import i18n from "$lib/shared/i18n.svelte";
+
+    let themeOptions = ["system", "light", "dark"] as const;
+    let theme = $state(themeOptions[0]);
 
     $effect(() => {
-        if (theme == "automatic") {
+        if (theme == null) {
             localStorage.removeItem("theme");
         } else {
             localStorage.theme = theme;
@@ -29,7 +30,7 @@
                 value={option}
                 bind:group={theme}
             />
-            <p>{themeLabels[idx]}</p>
+            <p>{i18n().Settings.Theme[option]}</p>
         </label>
     {/each}
 </form>

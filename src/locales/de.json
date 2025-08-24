@@ -1,0 +1,49 @@
+{
+    "general": {
+        "save": "Speichern"
+    },
+    "calendar": "Kalendar",
+    "Calendar": {
+        "week": ["S", "M", "D", "M", "D", "F", "S"],
+        "week_start": 1,
+        "months": [
+            "Januar",
+            "Februar",
+            "März",
+            "April",
+            "Mai",
+            "Juni",
+            "Juli",
+            "August",
+            "September",
+            "Oktober",
+            "November",
+            "Dezember"
+        ]
+    },
+    "templates": "Vorlagen",
+    "Templates": {},
+    "settings": "Einstellungen",
+    "Settings": {
+        "ical": "iCal",
+        "Ical": {
+            "explanation": "Hier kannst du etwas tun. Wir werden dein Passwort nicht für böse Zwecke verwenden (trust me bro).",
+            "username": "Nutzername",
+            "usernamePlaceholder": "Gebe deinen Nutzernamen ein.",
+            "password": "Passwort",
+            "passwordPlaceholder": "Gebe dein Passwort ein."
+        },
+        "theme": "Thema",
+        "Theme": {
+            "system": "System",
+            "dark": "Dunkel",
+            "light": "Hell"
+        },
+        "lang": "Sprache",
+        "Lang": {
+            "default": "Standard",
+            "en": "Englisch",
+            "de": "Deutsch"
+        }
+    }
+}

@@ -3,6 +3,7 @@
     import { db, type Template } from "$lib/services/db";
     import { goBack } from "$lib/utils/goBack"; // TODO
     import { page } from "$app/state";
+    import i18n from "$lib/shared/i18n.svelte";
 
     import Trash from "@lucide/svelte/icons/trash";
 
@@ -20,7 +21,7 @@
 
     async function storeTemplate() {
         try {
-            const id = await db.templates.add({
+            const _ = await db.templates.add({
                 title,
                 fullDay,
                 start,
@@ -64,10 +65,6 @@
     if (!isModeNew()) {
         readTemplate(id);
     }
-
-    $effect(() => {
-        console.log(modified);
-    });
 </script>
 
 <form class="mx-auto w-full max-w-md space-y-4">
